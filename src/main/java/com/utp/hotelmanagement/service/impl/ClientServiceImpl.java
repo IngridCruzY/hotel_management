@@ -19,7 +19,7 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public Client save(Client client) {
         if (clientRepository.findByDocumentNumber(client.getDocumentNumber()).isPresent()) {
-            throw new RuntimeException("Document number already exists");
+            throw new RuntimeException("El número de documento ya existe");
         }
         return clientRepository.save(client);
     }
@@ -32,13 +32,13 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public Client findById(Long id) {
         return clientRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Client not found"));
+                .orElseThrow(() -> new RuntimeException("Cliente no encontrado(a)"));
     }
 
     @Override
     public Client findByDocumentNumber(String documentNumber) {
         return clientRepository.findByDocumentNumber(documentNumber)
-                .orElseThrow(() -> new RuntimeException("Client not found"));
+                .orElseThrow(() -> new RuntimeException("Cliente no encontrado(a)"));
     }
 
     @Override

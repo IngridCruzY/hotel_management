@@ -22,7 +22,7 @@ public class RoomServiceImpl implements RoomService {
 
         if (roomRepository.existsByRoomNumber(room.getRoomNumber())) {
 
-            throw new RuntimeException("Room already exists");
+            throw new RuntimeException("La habitación ya existe");
         }
         return roomRepository.save(room);
     }
@@ -35,7 +35,7 @@ public class RoomServiceImpl implements RoomService {
     @Override
     public Room findById(Long id) {
         return roomRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Room not found"));
+                .orElseThrow(() -> new RuntimeException("Habitación no encontrada"));
     }
 
     @Override

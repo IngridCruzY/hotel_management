@@ -25,6 +25,7 @@ public class Room {
 
     private Integer floor;
 
+
     private Integer capacity;
 
     private BigDecimal pricePerNight;
