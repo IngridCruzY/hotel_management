@@ -33,6 +33,7 @@ public class ClientController {
 
     @GetMapping
     public List<ClientResponse> findAll() {
+
         return clientService.findAll()
                 .stream()
                 .map(ClientMapper::toResponse)
@@ -41,12 +42,14 @@ public class ClientController {
 
     @GetMapping("/{id}")
     public ClientResponse findById(@PathVariable Long id) {
+
         Client client = clientService.findById(id);
         return ClientMapper.toResponse(client);
     }
 
     @DeleteMapping("/{id}")
     public Map<String, String> deleteById(@PathVariable Long id) {
+
         clientService.deleteById(id);
         return Map.of("message", "Client deleted successfully");
     }
