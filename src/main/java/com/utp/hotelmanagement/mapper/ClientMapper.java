@@ -23,21 +23,21 @@ public class ClientMapper {
         return client;
     }
 
-    public static ClientResponse toResponse(Client client) {
+    public static ClientResponse toResponse(Client clientResponse) {
 
         ClientResponse response = new ClientResponse();
 
-        response.setId(client.getId());
+        response.setId(clientResponse.getId());
 
-        response.setDocumentNumber(client.getDocumentNumber());
+        response.setDocumentNumber(clientResponse.getDocumentNumber());
 
-        response.setFirstName(client.getFirstName());
+        response.setFirstName(clientResponse.getFirstName());
 
-        response.setLastName(client.getLastName());
+        response.setLastName(clientResponse.getLastName());
 
-        response.setEmail(client.getEmail());
+        response.setEmail(clientResponse.getEmail());
 
-        response.setPhone(client.getPhone());
+        response.setPhone(clientResponse.getPhone());
 
         return response;
     }
